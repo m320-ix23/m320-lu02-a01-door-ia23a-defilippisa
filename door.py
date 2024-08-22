@@ -1,3 +1,8 @@
+"""
+This module defines the Door and DoorLock classes, which model a door's behavior,
+including its ability to be opened, closed, locked, and unlocked.
+"""
+
 class Door:
     """
     Diese Klasse beschreibt eine Türe mit der Eigenschaft color (Farbe) und den Zuständen
@@ -6,29 +11,17 @@ class Door:
     Das Verriegeln selber delegiert die Türe an ein Objekt vom Typ Door_lock (Türschloss).
     """
 
-    # Mit dem Keyword def wird eine Funktion bzw. eben ein Konstruktor deklariert.
-    # Der Konstruktor trägt IMMER den Namen __init__ und weist als ersten Parameter
-    # den Wert self auf.
-    # Danach folgen die Übergabeparameter, deren Werte dann den Attributen zugewiesen werden.
-    # Attribute können aber auch mit einem fixen Wert initialisiert werden.
-    # Konstruktoren werden als Erstes im Programm angeschrieben.
-
     def __init__(self, ref2door_lock, base_color):
         """
         Erzeugt ein Tür-Objekt.
-        :param ref2door_lock:
-        :param base_color:
+        :param ref2door_lock: Referenz auf das Türschloss-Objekt
+        :param base_color: Die Basisfarbe der Tür
         """
-        # ein privates Attribut muss im Konstruktor initialisiert werden
-        # und ist dann in der Klasse über self._name_des_Attributs ansprechbar.
         self._the_door_lock = ref2door_lock
-        # Hier wird der Setter eines Attributs aufgerufen (siehe unten)
         self.color = base_color
         self._door_is_open = False
         self._door_is_locked = False
 
-    # Nach den Konstruktoren folgen Methoden, die eine Verarbeitung auslösen.
-    # Danach folgen Methoden, die auf ein Ereignis reagieren
     def open_the_door(self):
         """
         Methode für das Öffnen der Türe.
@@ -65,14 +58,14 @@ class Door:
 
     def test(self):
         """
-        Schreibt alle Attribute in den StdOut.
+        Schreibt alle Attribute in den Standardausgang.
         """
-        print(f'Türfarbe: {self.color}\n'
-              f'Türe offen: {self._door_is_open}\n'
-              f'Türe verriegelt: {self._door_is_locked}')
+        print(
+            f'Türfarbe: {self.color}\n'
+            f'Türe offen: {self._door_is_open}\n'
+            f'Türe verriegelt: {self._door_is_locked}'
+        )
 
-    # Am Ende folgen die Getter- und Setter-Methoden für die Attribute der Klasse.
-    # Getter werden mit der Annotation @property markiert.
     @property
     def door_is_open(self):
         """
@@ -97,7 +90,6 @@ class Door:
         """
         return self._color
 
-    # Setter werden mit der Annotation @name.setter markiert.
     @color.setter
     def color(self, new_color):
         """
