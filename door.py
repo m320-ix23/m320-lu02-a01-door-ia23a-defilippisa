@@ -12,6 +12,15 @@ class Door:
     # Danach folgen die Übergabeparameter, deren Werte dann den Attributen zugewiesen werden.
     # Attribute können aber auch mit einem fixen Wert initialisiert werden.
     # Konstruktoren werden als Erstes im Programm angeschrieben.
+
+    @property
+    def door_is_locked(self):
+        """
+        getter-Methode für den Zustand door_is_locked
+        :return: true, wenn die Türe verriegelt ist, sonst false
+        """
+        return self._door_is_locked
+
     def __init__(self, ref2door_lock, base_color):
         """
         Erzeugt ein Tür-Objekt.
