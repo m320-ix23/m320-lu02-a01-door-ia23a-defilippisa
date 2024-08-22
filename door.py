@@ -1,6 +1,6 @@
 class Door:
     """
-    Diese Klasse beschreibt eine Türe mit der Eigenschaft color (Farbe) und den Zuständen
+    Diese klasse beschreibt eine Türe mit der Eigenschaft color (Farbe) und den Zuständen
     door_is_open (für geöffnete Türe) sowie door_is_locked (für verriegelte Türe).
     Die Türe überwacht die beiden Zustände und verhindert so Aktionen, die nicht möglich sind.
     Das verriegeln selber delegiert die Türe an ein Objekt vom Typ Door_lock (Türschloss).
